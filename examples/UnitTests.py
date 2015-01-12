@@ -6,7 +6,7 @@
 
 # https://docs.python.org/3.2/library/unittest.html
 
-from unittest import main, TestCase
+import unittest
 
 def cycle_length (n) :
     assert n > 0
@@ -20,7 +20,7 @@ def cycle_length (n) :
     assert c > 0
     return c
 
-class MyUnitTests (TestCase) :
+class MyUnitTests (unittest.TestCase) :
     def test_1 (self) :
         self.assertEqual(cycle_length( 1), 1)
 
@@ -30,8 +30,8 @@ class MyUnitTests (TestCase) :
     def test_3 (self) :
         self.assertEqual(cycle_length(10), 7)
 
-if __name__ == "main" :
-    main()
+if __name__ == "__main__" :
+    unittest.main()
 
 """
 FFF
