@@ -288,7 +288,7 @@ assert x == {2 : "abc", 3 : "def", 4 : "ghi"}
 assert y == {2 : "abcxyz", 3 : "defxyz", 4 : "ghixyz"}
 
 assert     all([True,  2, 3.45, "abc", [2, 3, 4], (2, 3, 4), {2, 3, 4}, {2 : "abc", 3 : "def", 4 : "ghi"}])
-assert not any([False, 0, 0.0,  "",    [],        (),        {},        dict()])
+assert not any([False, 0, 0.0,  "",    [],        (),        set(),     dict()])
 
 assert list(zip())                       == []
 assert list(zip([]))                     == []
