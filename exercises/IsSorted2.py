@@ -22,6 +22,13 @@ def is_sorted_while (a, b, e, f = lt) :
         b += 1
     return True
 
+def is_sorted_for (a, b, e, f = lt) :
+    assert(b <= e)
+    for i in range(b, e - 1) :
+        if f(a[i + 1], a[i]) :
+            return False
+    return True
+
 def is_sorted_any (a, b, e, f = lt) :
     assert(b <= e)
     return not any(f(a[i + 1], a[i]) for i in range(b, e - 1))
@@ -49,6 +56,7 @@ print "IsSorted.py"
 
 test(is_sorted_recursion)
 test(is_sorted_while)
+test(is_sorted_for)
 test(is_sorted_any)
 
 print "Done."
