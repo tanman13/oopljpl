@@ -31,7 +31,8 @@ class MyUnitTests (TestCase) :
     def test_5 (self) :
         self.assertEqual(factorial_recursion(5), 120)
 
-main ()
+if __name__ == "__main__" :
+    main()
 
 """
 % Factorial.py
