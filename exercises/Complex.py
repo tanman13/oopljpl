@@ -60,5 +60,11 @@ class MyUnitTests (TestCase) :
         x -= y                             # x = x.__isub__(y)
         self.assertEqual(x, complex(2, 2))
 
+    def test_10 (self) :
+        x = complex(2, 3)
+        y = x.conjugate()                  # y = A.conjugate(x)
+        self.assertEqual(x, complex(2,  3))
+        self.assertEqual(y, complex(2, -3))
+
 if __name__ == "__main__" :
     main()
