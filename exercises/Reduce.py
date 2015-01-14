@@ -32,7 +32,7 @@ class MyUnitTests (TestCase) :
         assert reduce(add, [(2, 3, 4), (5, 6)], ()) == (2, 3, 4, 5, 6)
 
     def test_7 (self) :
-        assert reduce(add, ("abc", "de"), "") == "abcde"
+        assert reduce(add, ("abc",     "de"),   "") == "abcde"
 
 if __name__ == "__main__" :
     main()
