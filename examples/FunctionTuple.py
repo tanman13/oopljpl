@@ -52,7 +52,7 @@ assert s            == {3, 4}
 assert f(2, s,  5)  == [2, {3, 4}, (5,)]
 assert f(2, 5,  s)  == [2, 5, ({3, 4},)]
 assert g(2, 5, *s)  == [2, 5, {3, 4}]
-assert (g(2, *s)     == [2, 3, {4}])       # ?
+assert g(2, *s)     == [2, 3, {4}]       # ?
 assert g(y = 3, *u) == [2, 3, set()]
 assert g(*u, y = 3) == [2, 3, set()]
 #g(2, y = 5, *s)                          # TypeError: f() got multiple values for argument 'y'
