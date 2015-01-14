@@ -51,7 +51,7 @@ def bind (f) :
             assert f(add, [(2, 3, 4), (5, 6)], ()) == (2, 3, 4, 5, 6)
 
         def test_7 (self) :
-            assert f(add, ("abc", "de"), "") == "abcde"
+            assert f(add, ("abc", "de"),       "") == "abcde"
     return MyUnitTests
 
 if __name__ == "__main__" :
