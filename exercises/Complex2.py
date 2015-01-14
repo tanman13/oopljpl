@@ -82,6 +82,12 @@ def bind (c) :
             y = c(2, 3)
             x -= y                             # x = x.__isub__(y)
             self.assertEqual(x, c(2, 2))
+
+        def test_10 (self) :
+            x = c(2, 3)
+            y = x.conjugate()                  # y = A.conjugate(x)
+            self.assertEqual(x, c(2,  3))
+            self.assertEqual(y, c(2, -3))
     return MyUnitTests
 
 if __name__ == "__main__" :
