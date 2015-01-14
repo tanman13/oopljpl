@@ -20,7 +20,7 @@ def cycle_length (n) :
     assert c > 0
     return c
 
-class UnitTests (TestCase) :
+class MyUnitTests (TestCase) :
     def test_1 (self) :
         self.assertEqual(cycle_length( 1), 1)
 
