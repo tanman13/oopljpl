@@ -6,7 +6,7 @@
 
 from unittest import main, TestCase
 
-def count (b, s = 1) :
+def count (b = 0, s = 1) :
     ...
 
 class MyUnitTests (TestCase) :
