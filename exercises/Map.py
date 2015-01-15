@@ -9,8 +9,7 @@
 from unittest import main, TestCase
 
 def map (uf, a) :
-    for i in range(len(a)) :
-        yield uf(a[i])
+    ...
 
 class MyUnitTests (TestCase) :
     def test_1 (self) :
