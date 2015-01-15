@@ -4,6 +4,9 @@
 # Sequences.py
 # ------------
 
+from functools import reduce
+from operator  import add
+
 def test_1 (c) :
     assert not c()
 
@@ -104,20 +107,24 @@ def test_1 (c) :
 
 def test_2 (c) :
     a = c([2, 3, 4])
-    assert sum(a, 0) == 9
-    assert sum(a)    == 9
+    assert reduce(add, a) == 9
+    assert sum(a)         == 9
+    assert sum(a, 0)      == 9
 
     a = c([[2, 3, 4], [5, 6]])
-    assert sum(a, []) == [2, 3, 4, 5, 6]
-#   assert sum(a)     == [2, 3, 4, 5, 6] # TypeError: unsupported operand type(s) for +: 'int' and 'list'
+    assert reduce(add, a) == [2, 3, 4, 5, 6]
+#   assert sum(a)         == [2, 3, 4, 5, 6] # TypeError: unsupported operand type(s) for +: 'int' and 'list'
+    assert sum(a, [])     == [2, 3, 4, 5, 6]
 
     a = c([(2, 3, 4), (5, 6)])
-    assert sum(a, ()) == (2, 3, 4, 5, 6)
-#   assert sum(a)     == (2, 3, 4, 5, 6) # TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+    assert reduce(add, a) == (2, 3, 4, 5, 6)
+#   assert sum(a)         == (2, 3, 4, 5, 6) # TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+    assert sum(a, ())     == (2, 3, 4, 5, 6)
 
     a = c(["abc", "de"])
-#   assert sum(a, "") == "abcde" # TypeError: sum() can't sum strings [use "".join(seq) instead]
-    assert "".join(a) == "abcde"
+    assert reduce(add, a) == "abcde"
+#   assert sum(a, "")     == "abcde" # TypeError: sum() can't sum strings [use "".join(seq) instead]
+    assert "".join(a)     == "abcde"
 
 print("Sequences.py")
 
